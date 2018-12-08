@@ -1,28 +1,28 @@
-# MJB-Python-Git
+# MJB-OU-Thesis
 
-This repository contains reusable Python code.  The files included do the following:
+This repository contains the files necessary to duplicate the analysis
+in MJ Beattie's thesis for the University of Oklahoma, "Combining
+Classification and Bayesian Methods to Better Model Drug Abuse."  The
+files are contained in several directories as described below.
 
-GA_beattie.py:  
-This code is my modification of C. Nicholson's genetic algorithm code.
-It solves a test function using GA heuristics.
+Thesis:  
+The thesis itself in pdf and docx format.  Also included are the tables
+in thesis in an Excel workbook.  The presentation from the thesis
+defense is here as well.
 
-PSO_beattie.py:  
-This code is my codification of C. Nicholson's particle swarm
-optimization code.  I have significantly changed the code to implement an
-object-oriented approach.  This code allows the user to select the means by which
-the next direction is chosen.  In particular, it contains the ability to use not
-just past knowledge of the particle and swarm, but also the best "forward look".
-The "forward look" is the gradient of the objective function seen by the particle
-at a given iteration.
+Prep and PCA:  
+These routines take the NSDUH 2002-2014 combined dataset and reduces it
+for analysis.  prepdata_prePCA.R is run first, then NSDUH_pca.R is run.
+The second program runs PCA analyses and produces the files for the
+next stage in the study.
 
-TABU_beattie.py:
-This code implements a tabu search algorthim with best improvement.  It is used
-for evaluating problems with discrete choice variable vectors, such as the
-knapsack problem.
+Cond Tree:
+These routines conduct conditional inference random forest analyses on
+the adult and youth datasets. cmatrix_cf3.R generates ROC curves for
+the test datasets.
 
-ANNEALING_beattie.py:
-This code uses local search with simulated annealing to find an optimal solution.
-This implementation solves the knapsack problem.
-
-RANDOM_beattie.py:
-This code implements the hill climbing with random walk algorithm.
+MCMC:
+These routines run Bayesian MCMC analysis using the JAGS based runjags
+code.  DBDA2E-utilities.R is a rountine required for graphing.
+polyvalid.R and polyvalid_yth.R generate ROC curves and calculate
+AUROC.
